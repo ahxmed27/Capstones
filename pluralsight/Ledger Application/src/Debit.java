@@ -22,8 +22,8 @@ public class Debit {
             list.add(transaction);
             writer.write(transaction.toString() + "\n");
             writer.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("Invalid input Try again");
         }
     }
 
@@ -38,8 +38,8 @@ public class Debit {
             list.add(transaction);
             writer.write(transaction.toString() + "\n");
             writer.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("Invalid input. Try again");
         }
 
     }
