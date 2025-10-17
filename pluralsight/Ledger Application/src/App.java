@@ -25,7 +25,8 @@ public class App {
             case "L":
                 boolean exit = false;
                 while(!exit){
-                    exit = ledger();
+                    Ledger.display();
+                    exit = menu2();
                 }
                 break;
             case "X":
@@ -38,51 +39,55 @@ public class App {
         return false;
     }
 
-    private static boolean ledger() {
-        Ledger.display();
+    private static boolean menu2() {
         String reportChoice = console.nextLine();
-        switch(reportChoice){
-            case "A":
-                Ledger.entries();
-                break;
-            case "D":
-                Ledger.deposits();
-                break;
-            case "P":
-                Ledger.payments();
-                break;
-            case "R":
-                Ledger.reportsDisplay();
-                String ledgerChoice = console.nextLine();
-                if(Integer.parseInt(ledgerChoice.trim()) == 1){
-                    Ledger.monthDate();
-                }
-                else if(Integer.parseInt(ledgerChoice.trim()) == 2){
-                    Ledger.previousMonth();
-                }
-                else if(Integer.parseInt(ledgerChoice.trim()) == 3){
-                    Ledger.YearDate();
-                }
-                else if(Integer.parseInt(ledgerChoice.trim()) == 4){
-                    Ledger.previousYear();
-                }
-                else if(Integer.parseInt(ledgerChoice.trim()) == 5){
-                    System.out.println("Enter the name of the vendor: ");
-                    Ledger.searchByVendor(console.nextLine());
-                }
-                else if(Integer.parseInt(ledgerChoice.trim()) == 0){
-                    System.out.println("Going back to the Ledger page");
-                    return false;
-                }
-                else{
+        try{
+            switch(reportChoice){
+                case "A":
+                    Ledger.entries();
+                    break;
+                case "D":
+                    Ledger.deposits();
+                    break;
+                case "P":
+                    Ledger.payments();
+                    break;
+                case "R":
+                    Ledger.reportsDisplay();
+                    String ledgerChoice = console.nextLine();
+                    if(Integer.parseInt(ledgerChoice.trim()) == 1){
+                        Ledger.monthDate();
+                    }
+                    else if(Integer.parseInt(ledgerChoice.trim()) == 2){
+                        Ledger.previousMonth();
+                    }
+                    else if(Integer.parseInt(ledgerChoice.trim()) == 3){
+                        Ledger.YearDate();
+                    }
+                    else if(Integer.parseInt(ledgerChoice.trim()) == 4){
+                        Ledger.previousYear();
+                    }
+                    else if(Integer.parseInt(ledgerChoice.trim()) == 5){
+                        System.out.println("Enter the name of the vendor: ");
+                        Ledger.searchByVendor(console.nextLine());
+                    }
+                    else if(Integer.parseInt(ledgerChoice.trim()) == 0){
+                        System.out.println("Going back to the Ledger page");
+                        return false;
+                    }
+                    else{
+                        System.out.println("Invalid option.");
+                    }
+                    break;
+                case "H":
+                    System.out.println("Going back to Home page");
+                    break;
+                default:
                     System.out.println("Invalid option.");
-                }
-                break;
-            case "H":
-                System.out.println("Going back to Home page");
-                break;
-            default:
-                System.out.println("Invalid option.");
+                    return false;
+            }
+        } catch(Exception e){
+            System.out.println("Invalid option. Please enter a number.");
         }
         return true;
     }
