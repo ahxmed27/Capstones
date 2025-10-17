@@ -1,10 +1,12 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
  */
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Debit {
 
     public static ArrayList<Transaction> list = new ArrayList<>();
