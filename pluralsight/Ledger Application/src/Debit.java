@@ -15,6 +15,25 @@ public class Debit {
 
     Debit(){
     }
+
+    public static void load(){
+        try{
+            FileReader file = new FileReader("transactions.csv");
+            BufferedReader buffer = new BufferedReader(file);
+            String[] split;
+            String input;
+            while ((input = buffer.readLine()) != null) {
+                split = input.split("\\|");
+                Transaction transaction = new Transaction( split[0],
+                        split[1], split[2], split[3], Double.parseDouble(split[4]) );
+                list.add(transaction);
+            }
+            buffer.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error reading file");
+        }
+        }
     public static void addDeposit(){
         try{
             FileWriter writer = new FileWriter("transactions.csv", true);
@@ -48,4 +67,7 @@ public class Debit {
 
     }
 
+    public static boolean isEmpty() {
+        return list.isEmpty();
+    }
 }

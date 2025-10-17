@@ -11,6 +11,7 @@ public class App {
 
     public static void main(String[] args){
     boolean exit = false;
+    Debit.load();
     while(!exit){
        exit = logic();
     }
@@ -63,6 +64,9 @@ public class App {
         try{
             switch(reportChoice){
                 case "A":
+                    if(Debit.isEmpty()){
+                        System.out.println("File is empty");
+                    }
                     Ledger.entries();
                     break;
                 case "D":
