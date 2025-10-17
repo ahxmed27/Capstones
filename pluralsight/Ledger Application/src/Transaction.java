@@ -1,8 +1,8 @@
 /**
- *
+ * The Transaction class represents a single financial transaction.
+ * It stores details such as the date, time, description, vendor, and amount.
  */
 
-import java.time.format.DateTimeFormatter;
 public class Transaction {
 
 
@@ -66,8 +66,6 @@ public class Transaction {
     }
 
     public String toString(){
-        //DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-       // DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("HH:mm:ss");
         return String.format("%s|%s|%s|%s|%.2f", date, time, description, vendor, amount);
     }
 }

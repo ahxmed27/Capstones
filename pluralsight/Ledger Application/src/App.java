@@ -1,8 +1,8 @@
 /**
- *
+ * The App class serves as the main entry point for the Accounting Ledger program.
+ * It allows users to perform actions such as adding deposits, making payments,
+ * and viewing ledger reports through a simple text-based menu system.
  */
-
-
 import java.util.Scanner;
 
 public class App {
@@ -16,6 +16,12 @@ public class App {
     }
     }
 
+    /**
+     * This method displays the main menu and processes the user's input.
+     * It lets the user choose between adding a deposit, making a payment,
+     * opening the ledger, or exiting the program.
+     * @return Returns true if the user chooses to exit, otherwise false.
+     */
     private static boolean logic() {
         display();
         String menuChoice = console.nextLine();
@@ -45,6 +51,13 @@ public class App {
         return false;
     }
 
+
+    /**
+     * This method displays and handles the ledger submenu options.
+     * It allows the user to view all entries, deposits, or payments,
+     * or generate reports based on different date ranges or vendors.
+     * @return Returns false to go back to the previous menu, or true to stay in the ledger.
+     */
     private static boolean menu2() {
         String reportChoice = console.nextLine();
         try{

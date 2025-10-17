@@ -1,8 +1,8 @@
-
 /**
- *
+ * The Debit class manages deposits and payments for a financial ledger.
+ * It allows users to add transactions (deposits or payments) and
+ * stores them both in memory and in a CSV file.
  */
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;

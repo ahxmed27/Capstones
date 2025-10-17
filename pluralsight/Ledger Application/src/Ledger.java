@@ -1,8 +1,8 @@
 /**
- *
+ * The Ledger class provides methods to display and filter financial transactions.
+ * It allows viewing all entries, filtering by deposits or payments,
+ * and generating date or vendor-based reports.
  */
-
-import javax.crypto.spec.PSource;
 public class Ledger {
 
 
